@@ -1,4 +1,3 @@
-
 # 🏃‍♀️ FIWARE + ESP32 Heart Rate Monitor
 
 ## 📌 Descrição do Projeto
@@ -36,7 +35,37 @@ O **STH-Comet** é usado para persistir os dados históricos de batimentos no **
   - MongoDB  
 - **MQTT (Mosquitto)**  
 - **Postman** (requisições REST)  
-- **Docker Compose** (orquestração dos contêineres)
+- **Docker Compose** (orquestração dos contêineres)  
+- **Microsoft Azure** (VM para execução da stack FIWARE)
+
+---
+
+## ☁️ Ambiente de Execução (Azure)
+
+Para hospedar a stack do **FIWARE Descomplicado**, foi utilizada uma **máquina virtual (VM)** provisionada no **Microsoft Azure**, aproveitando os créditos disponibilizados pela FIAP.  
+
+### Configuração da VM
+- **Provedor**: Microsoft Azure  
+- **Sistema Operacional**: Ubuntu 20.04 LTS  
+- **Recursos mínimos recomendados**:  
+  - 2 vCPUs  
+  - 4 GB RAM  
+  - 20 GB Disco SSD  
+- **Rede**: portas públicas habilitadas para:  
+  - `1883` (MQTT)  
+  - `4041` (IoT Agent MQTT)  
+  - `1026` (Orion Context Broker)  
+  - `8666` (STH-Comet)  
+
+### Instalação do FIWARE
+Na VM foi executado:  
+```bash
+git clone https://github.com/fabiocabrini/fiware
+cd fiware
+sudo docker compose up -d
+```
+
+Isso inicializou todos os contêineres necessários (Orion, IoT Agent, MongoDB, Mosquitto, STH-Comet).  
 
 ---
 
@@ -116,7 +145,10 @@ PATCH http://{{url}}:1026/v2/entities/urn:ngsi-ld:Player:001/attrs
 ---
 
 ## 👥 Autores
+1ESPF:
 - Pedro Alves Faleiros - 562523  
 - Luan Felix - 565541  
 - João Lopes - 565737  
-- Leandro Farias - 566488  
+- Leandro Farias - 566488
+1ESPG:
+- Felipe Campos - 562752

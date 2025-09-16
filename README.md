@@ -50,26 +50,43 @@ Para hospedar a stack do **FIWARE Descomplicado**, foi utilizada uma **máquina 
 
 ### Configuração da VM
 - **Provedor**: Microsoft Azure  
-- **Sistema Operacional**: Ubuntu 20.04 LTS  
-- **Recursos mínimos recomendados**:  
-  - 2 vCPUs  
-  - 4 GB RAM  
-  - 20 GB Disco SSD  
+- **Sistema Operacional**: ubuntu-24_04-lts 
+- **Tamanho da VM**: B1s
 - **Rede**: portas públicas habilitadas para:  
   - `1883` (MQTT)  
   - `4041` (IoT Agent MQTT)  
   - `1026` (Orion Context Broker)  
-  - `8666` (STH-Comet)  
+  - `8666` (STH-Comet)
+  - `27017` (Mongo-db)
+    
+  Essas portas de entrada utilizam o protocolo TCP
+ 
+### Acessar a Máquina Virtual
+
+Execute em uma shell local à sua escolha:
+```bash
+cd Downloads
+
+ssh -i <private-key-file-path> <username>@<ip-da-vm>
+
+sudo apt update
+
+sudo apt install docker.io
+
+sudo apt install docker-compose
+```
 
 ### Instalação do FIWARE
-Na VM foi executado:  
+Na VM execute:  
 ```bash
 git clone https://github.com/fabiocabrini/fiware
+
 cd fiware
+
 sudo docker compose up -d
 ```
 
-Isso inicializou todos os contêineres necessários (Orion, IoT Agent, MongoDB, Mosquitto, STH-Comet).  
+Isso inicializa todos os contêineres necessários (Orion, IoT Agent, MongoDB, Mosquitto, STH-Comet).  
 
 ---
 
@@ -86,7 +103,7 @@ Isso inicializou todos os contêineres necessários (Orion, IoT Agent, MongoDB, 
 ## 🚀 Como Executar
 
 ### 1. Subir o Backend FIWARE
-Execute na pasta do `docker-compose.yml` do FIWARE:
+Execute na pasta do FIWARE:
 ```bash
 docker compose up -d
 ```
@@ -98,6 +115,12 @@ O potenciômetro irá simular os batimentos cardíacos, e o LED receberá comand
 ### 3. Importar Collection no Postman
 Importe o arquivo `FIWARE Descomplicado Heart Rate.postman_collection.json` no Postman.  
 Altere a variável `{{url}}` para o IP/host onde está rodando seu FIWARE.
+
+### 4. Encerramento
+Execute na pasta do FIWARE:
+```bash
+sudo docker-compose down
+```
 
 ---
 
@@ -154,5 +177,6 @@ PATCH http://{{url}}:1026/v2/entities/urn:ngsi-ld:Player:001/attrs
 - Luan Felix - 565541  
 - João Lopes - 565737  
 - Leandro Farias - 566488
+
 1ESPG:
 - Felipe Campos - 562752

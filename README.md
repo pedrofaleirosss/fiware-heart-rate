@@ -9,7 +9,7 @@ Além disso, o ESP32 recebe **comandos** para ligar/desligar o LED onboard, repr
 
 O **STH-Comet** é usado para persistir os dados históricos de batimentos no **MongoDB**, permitindo consultas e análises posteriores.
 
-📺 [Visualizar Explicação do Projeto no YouTube](https://youtube.com)
+📺 [Visualizar Explicação do Projeto no YouTube](https://youtu.be/qgAQNq_QYvI)
 
 👉 [Visualizar Projeto no Wokwi](https://wokwi.com/projects/442202130178019329)
 
@@ -161,6 +161,30 @@ PATCH http://{{url}}:1026/v2/entities/urn:ngsi-ld:Player:001/attrs
   "off": { "type": "command", "value": "" }
 }
 ```
+
+---
+
+## 📺 Evidências
+
+### Máquina Virtual no Azure
+Tela do portal do Microsoft Azure mostrando a máquina virtual utilizada para hospedar os containers do FIWARE, com especificações de sistema operacional, tamanho e rede.
+
+<img width="1915" height="950" alt="image" src="https://github.com/user-attachments/assets/2b4537c3-cbb8-4447-8cfe-cda067a137c7" />
+
+### Containers FIWARE rodando na VM
+Acesso ao terminal da VM via SSH, mostrando os comandos docker-compose up -d e o status dos containers do FIWARE, incluindo Orion Context Broker, IoT Agent MQTT e STH-Comet.
+
+<img width="1140" height="668" alt="image" src="https://github.com/user-attachments/assets/914a3c3e-94e7-495e-8096-9221fb9a14bc" />
+
+### Simulação do ESP32 com Potenciômetro no Wokwi
+Simulação do projeto Heart Rate no Wokwi, mostrando o ESP32 conectado ao potenciômetro (simulando sensor de batimentos cardíacos) e o LED onboard, com valores de BPM sendo exibidos em tempo real no Serial Monitor.
+
+<img width="1919" height="951" alt="image" src="https://github.com/user-attachments/assets/350ffeb8-c000-4a85-9fc9-751ead1402b5" />
+
+### Testes de API no Postman
+Exibição da coleção FIWARE Descomplicado no Postman, demonstrando requisições de provisionamento de dispositivo, consulta de BPM e status e envio de comandos para ligar/desligar o LED.
+
+<img width="1919" height="1040" alt="image" src="https://github.com/user-attachments/assets/38cbeaa5-cf30-4af0-a9e9-e95001a44f2c" />
 
 ---
 

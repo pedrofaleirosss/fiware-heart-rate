@@ -11,7 +11,7 @@ O **STH-Comet** é usado para persistir os dados históricos de batimentos no **
 
 📺 [Visualizar Explicação do Projeto no YouTube](https://youtube.com)
 
-👉 [Visualizar Projeto no Wokwi](https://wokwi.com/projects/441395890230460417)
+👉 [Visualizar Projeto no Wokwi](https://wokwi.com/projects/442202130178019329)
 
 ---
 

@@ -9,6 +9,10 @@ Além disso, o ESP32 recebe **comandos** para ligar/desligar o LED onboard, repr
 
 O **STH-Comet** é usado para persistir os dados históricos de batimentos no **MongoDB**, permitindo consultas e análises posteriores.
 
+📺 [Visualizar Explicação do Projeto no YouTube](https://youtube.com)
+
+👉 [Visualizar Projeto no Wokwi](https://wokwi.com/projects/441395890230460417)
+
 ---
 
 ## 🏗 Arquitetura

@@ -41,6 +41,7 @@ O **STH-Comet** é usado para persistir os dados históricos de batimentos no **
 - **Postman** (requisições REST)  
 - **Docker Compose** (orquestração dos contêineres)  
 - **Microsoft Azure** (VM para execução da stack FIWARE)
+- **React + Vite + Plotly.js** (dashboard web interativo)  
 
 ---
 
@@ -185,6 +186,16 @@ Simulação do projeto Heart Rate no Wokwi, mostrando o ESP32 conectado ao poten
 Exibição da coleção FIWARE Descomplicado no Postman, demonstrando requisições de provisionamento de dispositivo, consulta de BPM e status e envio de comandos para ligar/desligar o LED.
 
 <img width="1919" height="1040" alt="image" src="https://github.com/user-attachments/assets/38cbeaa5-cf30-4af0-a9e9-e95001a44f2c" />
+
+---
+
+## 📊 Dashboard Web (React + Plotly)
+
+O projeto conta com um **dashboard web interativo**, desenvolvido em **React + Vite + Plotly.js**, que consome os dados históricos armazenados no **STH-Comet** e exibe a variação dos **batimentos cardíacos (BPM)** da jogadora em tempo real.  
+
+Além disso, o status da jogadora (como *Repouso*, *Normal*, *Aquecimento* ou *Alto Esforço*) é calculado automaticamente com base no valor atual de BPM.
+
+<img width="1898" height="944" alt="image" src="https://github.com/user-attachments/assets/a266a656-49a3-4d73-8d38-28549a50a9ec" />
 
 ---
 
